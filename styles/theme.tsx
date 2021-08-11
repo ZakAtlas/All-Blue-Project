@@ -1,6 +1,14 @@
-import { createTheme, responsiveFontSizes } from '@material-ui/core/styles';
+import { createTheme, responsiveFontSizes } from '@material-ui/core'
 
-let theme = createTheme();
-theme = responsiveFontSizes(theme);
+import 'typeface-press-start-2p'
+import 'typeface-bangers'
+
+let theme = createTheme({
+  typography: {
+    h1: { fontFamily: 'Bangers' }
+  }
+})
+
+theme = responsiveFontSizes(theme)
 
 export default theme
