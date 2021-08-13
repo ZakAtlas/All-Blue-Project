@@ -77,12 +77,18 @@ const Home = ({ pokemons }: { pokemons: Pokemon }) => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: '60px 10px 10px 10px'
+        padding: '20px 10px 10px 10px',
+        backgroundColor: '#ffcc00',
+        border: '1px solid black',
+        maxWidth: '1400px',
+        height: '100vh'
       }}
     >
-      <Image width={400} height={100} src={PokeDexLogo} />
-      <div style={{ paddingTop: '30px', paddingBottom: '40px' }}>
-        <CustomSearchBar onSearch={setPartialSearch} />
+      <div>
+        <Image width={400} height={100} src={PokeDexLogo} />
+        <div style={{ paddingTop: '30px', paddingBottom: '40px' }}>
+          <CustomSearchBar onSearch={setPartialSearch} />
+        </div>
       </div>
       {!selectedPokemon ? null : (
         <div style={{ position: 'absolute', zIndex: 1 }}>
@@ -163,7 +169,7 @@ const Home = ({ pokemons }: { pokemons: Pokemon }) => {
           </Button>
         </div>
       )}
-      <Grid container justifyContent="space-between" direction="row">
+      <Grid container justifyContent="center" direction="row">
         <Grid item lg={2} md={1} xs-hidden="true" />
         <Grid
           container

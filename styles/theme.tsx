@@ -1,6 +1,5 @@
 import { createTheme, responsiveFontSizes } from '@material-ui/core'
 
-import 'typeface-press-start-2p'
 import 'typeface-vt323'
 
 let theme = createTheme({
@@ -15,8 +14,7 @@ let theme = createTheme({
   },
   typography: {
     fontSize: 20,
-    fontFamily: 'VT323',
-    h1: { fontFamily: 'Bangers' }
+    fontFamily: 'VT323'
   }
 })
 
