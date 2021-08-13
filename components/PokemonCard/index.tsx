@@ -31,7 +31,13 @@ const PokemonCard = ({
             alignContent: 'center'
           }}
         >
-          <Image layout="fill" objectFit="contain" src={pokemon.img} />
+          <Image
+            placeholder="blur"
+            blurDataURL="https://cdn.iconscout.com/icon/premium/png-256-thumb/pokeball-games-video-casino-gamer-1-42381.png"
+            layout="fill"
+            objectFit="contain"
+            src={pokemon.img}
+          />
         </div>
         <Grid container direction="column">
           <Grid xs={3} item>

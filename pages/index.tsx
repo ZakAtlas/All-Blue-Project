@@ -2,7 +2,6 @@ import { Button, capitalize, Grid, Typography } from '@material-ui/core'
 import { GetStaticProps } from 'next'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-import Loading from '../components/Loading'
 import PokemonCard from '../components/PokemonCard'
 import CustomSearchBar from '../components/SearchBar'
 import PokeDexLogo from '../public/Images/pokedexLogo.png'
@@ -121,6 +120,8 @@ const Home = ({ pokemons }: { pokemons: Pokemon }) => {
                     }}
                   >
                     <Image
+                      placeholder="blur"
+                      blurDataURL="https://cdn.iconscout.com/icon/premium/png-256-thumb/pokeball-games-video-casino-gamer-1-42381.png"
                       layout="fill"
                       objectFit="contain"
                       src={selectedPokemon.img}
