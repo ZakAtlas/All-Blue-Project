@@ -7,7 +7,7 @@ export default function TypeText({ type }: { type: PokemonTypes }) {
 
   switch (type) {
     case 'normal':
-      color = '#FFA500'
+      color = '#a4acaf'
       break
     case 'water':
       color = '#4592c4'
@@ -21,13 +21,36 @@ export default function TypeText({ type }: { type: PokemonTypes }) {
     case 'grass':
       color = '#9bcc50'
       break
+    case 'bug':
+      color = '#729f3f'
+      break
+    case 'electric':
+      color = '#eed535'
+      break
+    case 'fairy':
+      color = '#fdb9e9'
+      break
+    case 'rock':
+      color = '#a38c21'
+      break
     default:
       color = '#FF0000'
   }
 
   return (
-    <div style={{ background: color, width: '73.14px', height: '30px' }}>
-      <Typography variant="body2" align="center" style={{ color: '#FFFFFF' }}>
+    <div
+      style={{
+        background: color,
+        width: '73.14px',
+        height: '30px',
+        marginTop: '-3px'
+      }}
+    >
+      <Typography
+        variant="body2"
+        align="center"
+        style={{ color: '#FFFFFF', paddingTop: '1px' }}
+      >
         {type}
       </Typography>
     </div>
