@@ -46,9 +46,11 @@ const PokemonCard = ({
               variant="subtitle1"
             >{`#${pokemon.id}`}</Typography>
           </Grid>
-          <Typography align="left" variant="h5">
-            {capitalize(pokemon.name)}
-          </Typography>
+          <div style={{ marginTop: '-15px' }}>
+            <Typography align="left" variant="h5">
+              {capitalize(pokemon.name)}
+            </Typography>
+          </div>
           <TypeText type={pokemon.type[0]} />
         </Grid>
       </div>
