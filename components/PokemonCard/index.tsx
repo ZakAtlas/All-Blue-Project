@@ -1,50 +1,53 @@
-import { Grid, Typography } from '@material-ui/core'
+import { Button, capitalize, Grid, Typography } from '@material-ui/core'
 import React from 'react'
-import MediaCard from '../card'
 import { PokemonStats } from '../../types'
 import Image from 'next/image'
+import TypeText from '../TypeText'
 
-export default function PokemonCard({ pokemon }: { pokemon: PokemonStats }) {
-  let typeText = ''
-
-  for (let i = 0; i < pokemon.type.length; i++) {
-    typeText += pokemon.type[i]
-
-    if (i != pokemon.type.length - 1) {
-      typeText += ', '
-    }
-  }
-
+const PokemonCard = ({
+  pokemon,
+  onClicked
+}: {
+  pokemon: PokemonStats
+  // eslint-disable-next-line no-unused-vars
+  onClicked: (val: PokemonStats) => void
+}) => {
   return (
-    <div
-      style={{
-        width: '100%',
-        height: '100%',
-        position: 'relative'
-      }}
-    >
+    <Button onClick={() => onClicked(pokemon)}>
       <div
         style={{
-          width: '100%',
-          height: '50%',
-          position: 'relative'
+          paddingTop: '20px',
+          maxHeight: '300px',
+          width: '200px'
         }}
       >
-        <Image src={pokemon.img} layout="fill" objectFit="contain" />
+        <div
+          style={{
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            width: '150px',
+            height: '150px',
+            position: 'relative',
+            alignContent: 'center'
+          }}
+        >
+          <Image layout="fill" objectFit="contain" src={pokemon.img} />
+        </div>
+        <Grid container direction="column">
+          <Grid xs={3} item>
+            <Typography
+              align="left"
+              variant="subtitle1"
+            >{`#${pokemon.id}`}</Typography>
+          </Grid>
+          <Typography align="left" variant="h5">
+            {capitalize(pokemon.name)}
+          </Typography>
+          <TypeText type={pokemon.type[0]} />
+        </Grid>
       </div>
-      <Typography align="center" variant="h1">
-        {pokemon.name}
-      </Typography>
-      <div style={{ paddingTop: '10px' }}>
-        <Typography align="center" variant="h4">
-          Type: {typeText}
-        </Typography>
-      </div>
-      <div style={{ paddingTop: '10px' }}>
-        <Typography align="center" variant="h4">
-          Height: {pokemon.height}
-        </Typography>
-      </div>
-    </div>
+    </Button>
   )
 }
+
+export default PokemonCard
